@@ -1,40 +1,63 @@
 # UFOs - Module 11 Challenge
 
 
-## Deliverable 1 Requirements
+## Deliverable 1
 
-You will earn a perfect score for Deliverable 1 by completing all requirements below:
+The list element that creates the button is removed, instead, there are five "list elements" for filtering in the "index.html" file.
 
-The list element that creates the button is removed, and there are five list elements for filtering in the index.html file. (20 pt)
-The event listener is modified to detect changes to each filter in the app.js file. (10 pt)
-The updateFilters() function saves the element, value, and the id of the filter that was changed. (20 pt)
-The filterTable() function loops through all of the filters and keeps any data that matches the filter values. (20 pt)
-The webpage filters the table correctly based on user input. (20 pt)
+![11](Images/11.png)
+
+The event listener is modified to detect changes to each filter in the "app.js" file.
+
+![12](Images/12.png)
+
+The "updateFilters()" function saves the element, value, and the id of the filter that was changed.
+
+![13](Images/13.png)
+
+The "filterTable()" function loops through all of the filters and keeps any data that matches the filter values.
+
+![14](Images/14.png)
+
+The webpage filters the table correctly based on user input. The following displays three filters:
+
+* Date: 1/1/2010
+* City: el cajon
+* State: ca
+
+![15](Images/15.png)
 
 
-## Deliverable 2 Requirements
+## Deliverable 2: Analysis
 
-Structure, Organization, and Formatting (8 points)
+### a) Overview
 
-The written analysis has the following structure, organization, and formatting:
+The purpose of this exercise is to have a webpage with a dynamic table to display UFOs sightings, allowing the user to filter for multiple criteria at the same time, within the website.
 
-There is a title, and there are multiple paragraphs. (2 pt)
-Each paragraph has a heading. (2 pt)
-There are subheadings to break up text. (2 pt)
-Images are formatted and displayed where appropriate. (2 pt)
+In addition to the date, the table can filter for:
 
+* city
+* state
+* country
+* shape
 
-## Analysis (12 points)
-
-The written analysis has the following:
-
-### a) Overview of the analysis
-
-The purpose is well defined (2 pt)
 ### b) Results
 
-There is a description of how to perform a search, with images. (4 pt)
+The search starts when a new value is entered (date, city, state, country or shape).
+
+Note that after entering (typing) the new value, and hitting "enter" or moving the cursor and clicking in a new cell, the search starts: the "event" was listened.
+
+    `d3.selectAll("input").on("change", updateFilters);`
+
+Immediately, the "updateFilters" function is fed with this value (its "id" and "value"), and the updated table is generated.
+
+    `buildTable(tableData);`
+
 ### c) Summary
 
-The summary addresses one drawback of this webpage (2 pt)
-The summary addresses two additional recommendations for further development (4 pt)
+One drawback of this webpage is that the information is limited to the available data in "data.js".
+
+For further development, these could be implemented:
+
+* Export the filtered table (txt, excel, word)
+* Ability to change the background from dark to white, if selected
